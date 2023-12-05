@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@400;700;900&family=Urbanist:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --color-primary: #7450E9;
+    --color-text: #373737;
+    --background-color: #F7F1FF;
+}
+
+*::after,
+*::before,
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Urbanist', sans-serif;
+    text-decoration: none;
+    background: var(--background-color);
+}
+
+.head {
+    position: relative;
+}
+
+.backgroundSvg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: auto;
+    pointer-events: none;
+    z-index: 1; /* Set a z-index to position it behind the content */
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2; /* Make sure the navbar is above the SVG */
+    display: flex;
+    justify-content: space-between;
+}
+
+.navRight {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 3.5rem;
+    margin-right: 6rem;
+}
+
+.navbarList {
+    list-style-type: none;
+    display: flex;
+    font-size: 28px;
+}
+
+.navbarLink {
+    position: relative;
+    text-decoration: none;
+    color: #373737;
+    margin: 0 1rem;
+}
+
+.navbarLink:before {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    height: 4px;
+    width: 95%;
+    background: var(--color-primary);
+    border-radius: 12px;
+    transform-origin: bottom right;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    text-decoration: none;
+}
+
+.navbarLink:hover:before {
+    transform-origin: bottom left;
+    transform: scaleX(1);
+    text-decoration: none;
+    transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Optional: You can adjust the timing function for a smoother transition */
+}
+
+
+.navbarItem {
+    cursor: pointer;
+}
+
+.logo {
+    transform: scale(0.8);
+}
+
+.languageChangeBtn {
+    background-color: var(--color-primary);
+    border-radius: 50%;
+    height: 2.5rem;
+    width: 2.5rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 400;
+    transition: all 0.3s ease;
+    margin: 0 1rem;
+}
+
+.languageChangeBtn:hover {
+    scale: 1.08;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.github:hover {
+    scale: 1.08;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.github {
+    margin: 0 1rem;
+}
+
+.logo {
+    margin-top: 1.5rem;
+    margin-left: 1rem;
+}
+
+.vectorPerson {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 12rem;
+    margin-right: 5rem;
+    width: fit-content;
+}
+
+main {
+    display: flex;
+}
+
+#dynamicText {
+    display: inline-block;
+    font-family: monospace;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid #000;
+    animation: blink-caret 0.75s infinite;
+    transition: all 0.3s ease;
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: black; }
+}
