@@ -48,10 +48,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Create a "Learn More" button
             const learnMoreBtn = createButton("Learn More");
+            const websiteLinkBtn = createButton("Website");
+            learnMoreBtn.classList.add('projectBtn')
+            websiteLinkBtn.classList.add('projectBtn')
             learnMoreBtn.addEventListener("click", function () {
                 openSidebar(projects[i].additionalInfo);
             });
             projectBox.appendChild(learnMoreBtn);
+            projectBox.appendChild(websiteLinkBtn)
 
             // Append the project box to the last row
             projectContainer.lastChild.appendChild(projectBox);
