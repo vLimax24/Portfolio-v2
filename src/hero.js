@@ -16,6 +16,10 @@ function updateTextContainerHeight() {
   const newText = newTexts[currentIndex];
   textContainer.textContent = newText;
 
+  const fontSize = window.getComputedStyle(textContainer).fontSize;
+  const minHeight = parseFloat(fontSize); // Convert font size to a numeric value
+  document.querySelector('.dynamicTextWrapper').style.minHeight = minHeight + 'px';
+  document.querySelector('.description').style.height = minHeight + 'px';
 }
 
 function updateCursor() {
