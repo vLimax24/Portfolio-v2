@@ -22,16 +22,13 @@
     transition: all 0.3s ease;
 }
 
-.section3left {
-    margin-left: 5%;
+.section3right {
+    width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-}
 
-.section3right {
-    text-align: right;
-    margin-right: 10%;
 }
 
 .stack {
@@ -39,6 +36,7 @@
     flex: 1;
     max-width: 50%;
     margin-top: 2em;
+    scale: 1.2;
 }
 
 .row {
