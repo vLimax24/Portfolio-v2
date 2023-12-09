@@ -1,0 +1,120 @@
+#contactForm {
+    max-width: 800px;
+    min-width: 600px;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 8px;
+    color: #7450E9;
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    border: none;
+    background: transparent;
+    border-bottom: 3px solid #7450E9;
+    font-size: 14px;
+    white-space: pre-wrap; /* This allows the textarea to wrap to a new line */
+}
+
+.form-input:focus {
+    outline: none;
+}
+
+.form-button {
+    background-color: #7450E9;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    margin-top: 2em;
+}
+
+.form-button:hover {
+    background-color: #5737a1;
+}
+
+.section4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 10em;
+}
+
+.feedback {
+    margin-bottom: 1em;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.error {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.section4 > h1 {
+    font-size: 3em;
+}
+
+.section4 > h2 {
+    font-size: 2.7em;
+    color: #7450E9
+}
+
+.section4 > .textMarker {
+    text-align: right;
+}
+
+.headline {
+    width: 100%;
+    text-align: right;
+    margin-bottom: -5em;
+    margin-right: 20%;
+}
+
+.footerImg {
+    max-width: 2em;
+    width: 1.5em;
+    height: 1.5em;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #7450E9;  
+    z-index: 10000000000;
+    color: white;
+}
+
+.footerIcons {
+    display: flex;
+    align-items: center;
+}
+
+.footerIcons >a  {
+    margin: 1.3em;
+}
+
+.dcfooterImg {
+    width: 3em;
+}
+
+footer > p {
+    margin-left: 25%;
+}

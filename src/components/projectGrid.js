@@ -55,6 +55,15 @@ document.addEventListener("DOMContentLoaded", function () {
     let projectsDisplayed = 4; // Number of projects initially displayed
     const projectsPerPage = 4; // Number of projects to display per click
 
+    let counter = 1;
+    setInterval(function() {
+        document.getElementById('radio' + counter).checked -= true;
+        counter++
+        if (counter > 4) {
+            counter = 1
+        }
+    }, 4000)
+
     function displayProjects() {
         // Display projects in rows
         for (let i = 0; i < projectsDisplayed; i++) {
@@ -80,7 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // Create a "Learn More" button
             const learnMoreBtn = createButton("Learn More");
             learnMoreBtn.addEventListener("click", function () {
-                openSidebar(projects[i].additionalInfo);
+                openSidebar(projects[i].image);
             });
     
             // Create a "Website" button
@@ -131,13 +140,55 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function openSidebar(info) {
         // Set sidebar content
-        sidebar.innerHTML = `<div class="sidebarContent">${info}<button id="closeBtn">&#10006;</button></div>`;
+        sidebar.innerHTML = `
+        <div class="slider">
+        <div class="slides">
+            <input type="radio" name="radio-btn" id="radio1">
+            <input type="radio" name="radio-btn" id="radio2">
+            <input type="radio" name="radio-btn" id="radio3">
+            <input type="radio" name="radio-btn" id="radio4">
+            <input type="radio" name="radio-btn" id="radio5">
+
+            <div class="slide first">
+                <img src=${info} alt="">
+            </div>
+            <div class="slide">
+                <img src=${info} alt="">
+            </div>
+            <div class="slide">
+                <img src=${info} alt="">
+            </div>
+            <div class="slide">
+                <img src=${info} alt="">
+            </div>
+            <div class="slide">
+                <img src=${info} alt="">
+            </div>
+            <div class="navigation-auto">
+                <div class="auto-btn1"></div>
+                <div class="auto-btn2"></div>
+                <div class="auto-btn3"></div>
+                <div class="auto-btn4"></div>
+                <div class="auto-btn5"></div>
+            </div>
+        </div>
+
+        <div class="navigation-manual">
+            <label for="radio1" class="manual-btn"></label>
+            <label for="radio2" class="manual-btn"></label>
+            <label for="radio3" class="manual-btn"></label>
+            <label for="radio4" class="manual-btn"></label>
+            <label for="radio5" class="manual-btn"></label>
+        </div>
+    </div>
+        
+        `;
     
         // Open the sidebar with slide-in animation
         sidebar.style.width = "100%";
         sidebar.style.opacity = "1";
         sidebar.style.transition = "width 0.5s"
-        sidebar.style.zIndex = '1000000000000000000'
+        sidebar.style.zIndex = '1000'
     
         // Attach the event listener to the close button
         const closeBtn = document.getElementById("closeBtn");
@@ -154,6 +205,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Close the sidebar with slide-out animation
         sidebar.style.width = "0";
         sidebar.innerHTML=''
+        sidebar.style.zIndex = '99999999999999999999999999999999999999999'
     
         // Set a timeout to reset transition and opacity after the animation
         setTimeout(function () {

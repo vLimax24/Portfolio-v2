@@ -24,12 +24,21 @@
 
 .section3left {
     margin-left: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .section3right {
+    text-align: right;
+    margin-right: 10%;
+}
+
+.stack {
     display: flex;
     flex: 1;
     max-width: 50%;
+    margin-top: 2em;
 }
 
 .row {
