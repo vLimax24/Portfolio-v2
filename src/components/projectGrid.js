@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
         */
         {
             title: "Project 1",
-            image: "https://placehold.co/100x200",
+            image: "https://plus.unsplash.com/premium_photo-1680902988871-70d583ca1e95?q=80&w=1979&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             websiteLink: "https://example.com/project1",
             additionalInfo: "Further information about Project 1.",
@@ -141,6 +141,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function openSidebar(info) {
         // Set sidebar content
         sidebar.innerHTML = `
+        <button id='closeBtn'>&#10006;</button>
         <div class="slider">
         <div class="slides">
             <input type="radio" name="radio-btn" id="radio1">
